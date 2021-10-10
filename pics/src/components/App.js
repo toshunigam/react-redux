@@ -12,10 +12,13 @@ class App extends React.Component{
     onSearchSubmit = async (term)=>{
         // console.log(term)
         if(term){
+            // call unsplash custom client 
             const res = await unsplash.get(`/search/photos`,{
                 params:{query:term},
             })
+
             console.log(res.data.results)
+            
             this.setState({
                 images:res.data.results
             })
@@ -29,7 +32,7 @@ class App extends React.Component{
                 
                 {this.state.images?this.state.images.map((item,i)=><ImageCard data={item} key={i} />):""}
             </div>
-        ) 
+        )
     }
 };
 
