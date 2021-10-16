@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 // import Accordion from './component/Accordion'
-import Dropdown from './component/Dropdown'
+// import Dropdown from './component/Dropdown'
+import Translate from './component/Translate'
 // import Search from './component/Search'
 
-const items = [
+/* const items = [
     {
         title:"what is react?",
         content:"React is javascript framework introduced by Facebook."
@@ -20,8 +21,9 @@ const items = [
         title:"what is java",
         content:"Java is object oriented programming language."
     }
-]
-const options = [
+] */
+
+/* const options = [
     {
         label:'The color of red',
         value:'red'
@@ -38,15 +40,17 @@ const options = [
         label:'A shade of orange',
         value:'orange'
     }
-]
+] */
+
 const App = ()=>{
-    const [selected, setSelected] = useState(options[0])
+    // const [selected, setSelected] = useState(options[0])
     return (
         <div>
 
             {/* <Accordion items={items} /> */}
             {/* <Search /> */}
-            <Dropdown options={options} selected={selected} onSelectionChange={setSelected} />
+            {/* <Dropdown options={options} selected={selected} onSelectionChange={setSelected} /> */}
+            <Translate />
         </div>
     )
     
