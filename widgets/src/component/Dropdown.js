@@ -1,7 +1,29 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const Dropdown = (props)=>{
+    const [open,setOpen]=useState(false)
+    const ref = useRef();
+
+    useEffect(()=>{
+        const onBodyClick = (e) => {
+            if(ref.current.contains(e.target)){
+                return;
+            }
+
+            setOpen(false)
+        }
+
+        document.body.addEventListener('click',onBodyClick)
+
+        return ()=>{
+            document.body.removeEventListener('click',onBodyClick)
+        }
+    },[])
+
     const renderOptions = props.options.map((option)=>{
+        if(option.value===props.selected.value){
+            return null;
+        }
         return(
             <div 
                 className="item" 
@@ -13,13 +35,13 @@ const Dropdown = (props)=>{
         )
     })
     return(
-        <div className="ui form">
+        <div ref={ref} className="ui form">
             <div className="field">
                 <label>{props.title}</label>
-                <div className="ui selection dropdown visible active">
+                <div onClick={()=>setOpen(!open)} className={`ui selection dropdown ${open ? 'visible active':''}`}>
                     <i className="dropdown icon"></i>
                     <div className="text">{props.selected.label}</div>
-                    <div className="menu visible transition">
+                    <div className={`menu ${open ? 'visible transition':''}`}>
                         {renderOptions}
                     </div>
                 </div>
