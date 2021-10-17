@@ -6,7 +6,7 @@ const Dropdown = (props)=>{
 
     useEffect(()=>{
         const onBodyClick = (e) => {
-            if(ref.current.contains(e.target)){
+            if(ref.current!==null && ref.current.contains(e.target)){
                 return;
             }
 
@@ -73,4 +73,5 @@ Dropdown.defaultProps = {
     ],
     
 }
+
 export default Dropdown
