@@ -10,9 +10,10 @@ class App extends React.Component{
     }
 
     onSearchSubmit = async (term)=>{
-        // console.log(term)
+        
         if(term){
             // call unsplash custom client 
+            // its a custom way to create app service
             const res = await unsplash.get(`/search/photos`,{
                 params:{query:term},
             })
