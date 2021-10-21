@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const SearchBar = ()=>{
+const SearchBar = ({onSubmit})=>{
     const [term, setTerm] = useState('building')
 
     const onFormSubmit = (e)=>{
@@ -8,11 +8,11 @@ const SearchBar = ()=>{
         // console.log(this.state.term)
         
         // Calling parent function onSubmit to pass data from child to parent using this.props
-        this.props.onSubmit(term)
+        onSubmit(term)
     }
 
     return (
-        <div className="ui segment">
+        <div className="search-bar ui segment">
             <form onSubmit={(e)=>onFormSubmit(e)} className="ui form">
                 <div className="field">
                     <label>Image Search</label>

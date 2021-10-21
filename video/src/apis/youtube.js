@@ -1,8 +1,13 @@
 import axios from 'axios'
 
+const KEY = 'AIzaSyAgql9_uD7B8Jgc8hzJmJQomAoo8iOpmZc'
 export default axios.create({
-    baseURL:'https://api.unsplash.com',
-    headers:{
-        Authorization:'Client-ID DNO_jOFQDcj67wV_iXOV0nQp0dW8XYfrDrH3q8jIErk'
+    //AIzaSyAgql9_uD7B8Jgc8hzJmJQomAoo8iOpmZc
+    baseURL:'https://www.googleapis.com/youtube/v3',
+    params:{
+        part:'snippet',
+        maxResults:5,
+        key:KEY,
+        type:'video'
     }
 })
