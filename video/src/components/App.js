@@ -17,7 +17,7 @@ const App = ()=>{
     }
 
     const onVideoSelect = (video)=>{
-        console.log('fromtheapp',video)
+        // console.log('fromtheapp',video)
         setSelectedVideo(video)
     }
 
