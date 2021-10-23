@@ -24,8 +24,16 @@ const App = ()=>{
     return (
         <div className="ui container">
             <SearchBar onSubmit={onSearchSubmit} />
-            <VideoDetail video={selectedVideo} />
-            <VideoList onVideoSelect={onVideoSelect} videos={videos} />
+            <div className="ui grid">
+                <div className="ui row">
+                    <div className="eleven wide column">
+                        <VideoDetail video={selectedVideo} />
+                    </div>
+                    <div className="five wide column">
+                        <VideoList onVideoSelect={onVideoSelect} videos={videos} />
+                    </div>
+                </div>
+            </div>
         </div>
     )
 }
