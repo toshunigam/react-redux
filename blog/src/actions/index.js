@@ -20,3 +20,11 @@ export const fetchPosts = ()=> async dispatch => {
     })
     
 }
+
+export const fetchUser = (ID)=> async dispatch =>{
+    const response = await jsonPlaceholder.get(`user/${ID}`)
+    dispatch({
+        type:'FETCH_USER',
+        payload:response
+    })
+}
