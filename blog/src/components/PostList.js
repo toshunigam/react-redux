@@ -34,7 +34,7 @@ class PostList extends Component{
 }
 
 const mapStateToProp = (state)=>{
-    return {posts:state.posts.data,user:state.user}
+    return {posts:state.posts,user:state.user}
 }
 
 export default connect(mapStateToProp,{ fetchPosts, fetchUser })(PostList)
