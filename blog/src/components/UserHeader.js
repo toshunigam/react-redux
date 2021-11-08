@@ -4,7 +4,6 @@ import { connect } from 'react-redux'
 class UserHeader extends Component{
 
     render(){
-        // console.log(this.props.users)
         const {user} = this.props
         if(!user){
             return null

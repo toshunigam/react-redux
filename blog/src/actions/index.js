@@ -20,7 +20,8 @@ export const fetchPostsAndUsers = ()=> async (dispatch, getState)=>{
 
 }
 
-export const fetchPosts1 = ()=>{
+
+/* export const fetchPosts1 = ()=>{
     return async dispatch => {
         const response = await jsonPlaceholder.get('/posts')
         dispatch({
@@ -29,7 +30,7 @@ export const fetchPosts1 = ()=>{
         })
     
     }
-}
+} */
 
 // same as above
 export const fetchPosts = ()=> async dispatch => {
