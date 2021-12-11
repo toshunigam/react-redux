@@ -33,9 +33,10 @@ const Search = ()=>{
             setResults(data.query.search)
         }
 
-            search()
+        search()
 
     },[debounceTerm])
+    
     const resultRenders = results.map((result,i)=>{
         return (
             <div className="item" key={i}>
